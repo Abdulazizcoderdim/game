@@ -6,7 +6,7 @@ const Faq = () => {
   return (
     <div className="pb-20">
       <div className="w-full text-center text-white space-y-3 pt-24">
-        <p className="font-extrabold md:text-[63px] text-5xl">
+        <p className="font-extrabold md:text-[63px] sm:text-5xl text-3xl">
           FAQ <span className="text-[#61FFF5]">&</span> ПОДДЕРЖКА
         </p>
         <p className="text-[19px] font-semibold">
@@ -16,7 +16,7 @@ const Faq = () => {
       <MaxWidth className="space-y-10">
         <div>
           <div className="text-white mt-8">
-            <p className="flex items-center gap-x-4 md:text-[26px] text-xl font-bold">
+            <p className="flex items-center gap-x-4 md:text-[26px] max-sm:text-sm text-xl font-bold">
               <img
                 width={59}
                 height={59}
@@ -24,7 +24,8 @@ const Faq = () => {
                 src="nast.png"
                 alt=""
               />
-              Необходимые <span className="text-[#61FFF5]">компоненты</span>
+              Необходимые
+              <span className="text-[#61FFF5]"> компоненты</span>
             </p>
           </div>
           <div className="flex flex-wrap gap-x-10 gap-y-14 mt-10">
@@ -57,7 +58,7 @@ const Faq = () => {
         </div>
         <div>
           <div className="text-white mt-8">
-            <p className="flex items-center gap-x-4 md:text-[26px] text-xl font-bold">
+            <p className="flex items-center gap-x-4 md:text-[26px] max-sm:text-sm text-xl font-bold">
               <img
                 className="max-sm:w-8 max-sm:h-8"
                 width={59}
@@ -88,7 +89,7 @@ const Faq = () => {
         </div>
         <div>
           <div className="text-white mt-8">
-            <p className="flex items-center gap-x-4 md:text-[26px] text-xl font-bold">
+            <p className="flex items-center gap-x-4 max-sm:text-sm md:text-[26px] text-xl font-bold">
               <img
                 className="max-sm:w-8 max-sm:h-8"
                 width={59}
@@ -110,7 +111,7 @@ const Faq = () => {
         </div>
         <div>
           <div className="text-white mt-8">
-            <p className="flex items-center gap-x-4 md:text-[26px] text-xl font-bold">
+            <p className="flex items-center gap-x-4 max-sm:text-base md:text-[26px] text-xl font-bold">
               <img
                 className="max-sm:w-8 max-sm:h-8"
                 width={59}
@@ -127,7 +128,7 @@ const Faq = () => {
                 background:
                   'linear-gradient(150.74deg, #17302E 8.29%, #48968F 189.21%)',
               }}
-              className="border-2 border-[#5DFEF4] rounded-2xl shadow-xl p-2 md:min-w-[350px] max-sm:w-full"
+              className="border-2 box-sh border-[#5DFEF4] rounded-2xl shadow-xl p-2 md:min-w-[350px] max-sm:w-full"
             >
               <div className="py-6 px-5 space-y-7 text-white border-[#5DFEF4] border-dashed border-2 w-full h-full border-b-0 rounded-2xl rounded-b-none">
                 <div className="flex items-center gap-x-3">

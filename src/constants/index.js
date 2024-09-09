@@ -95,3 +95,30 @@ export const settingsInfo = [
     name: 'Все',
   },
 ];
+
+export const systemInfo = [
+  {
+    icon: 'str.png',
+    title: 'Игровой клиент:',
+  },
+  {
+    icon: 'pr.png',
+    title: 'Поддерживаемые процессоры:',
+  },
+  {
+    icon: 'win.png',
+    title: 'Поддерживаемые OCs:',
+  },
+  {
+    icon: 'usb.png',
+    title: 'Спуфер:',
+  },
+  {
+    icon: 'sh.png',
+    title: 'Античит:',
+  },
+  {
+    icon: 'wc.png',
+    title: 'Режим окна:',
+  },
+];

@@ -17,23 +17,23 @@ const PanelAdminstrator = () => {
   return (
     <div className="pt-20">
       <MaxWidth className="text-white">
-        <h1 className="font-extrabold text-4xl">
+        <h1 className="font-extrabold md:text-4xl text-xl">
           ПАНЕЛЬ <span className="text-[#5CFFF5]">АДМИНИСТРАТОРА</span>
         </h1>
 
-        <div className="mt-10 flex gap-x-5">
-          <div className="flex flex-col gap-y-3">
+        <div className="mt-10 flex max-xl:flex-col max-xl:space-y-10 gap-x-5">
+          <div className="flex flex-col gap-y-5">
             {catalogItems.map((item, i) => {
               const isActive = i === active;
               return (
                 <div
                   onClick={() => setActive(i)}
                   key={i}
-                  className={`bg-[#17302E] ${
+                  className={`bg-[#17302E] box-sh ${
                     isActive
                       ? 'border-[#5DFFF5] text-white backround-color'
                       : 'border-[#3C7D77]'
-                  } min-w-[400px] cursor-pointer text-center px-5 text-[#3C7D77] rounded-lg py-4 border-2 `}
+                  } min-w-[250px] max-w-[250px] cursor-pointer text-center px-5 text-[#3C7D77] rounded-lg py-4 border-2 `}
                 >
                   <p className="font-extrabold text-xl">{item}</p>
                 </div>

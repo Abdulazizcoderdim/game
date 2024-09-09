@@ -67,7 +67,7 @@ const Header = () => {
       {close && (
         <div className="flex bg-[#27A79F] items-center py-2 text-white relative">
           <p className="font-medium sm:text-base text-xs w-full text-center">
-            Присоединяйтесь к нашему сообществу в Telegram
+            Присоединяйтесь к нашему <br className='sm:hidden' /> сообществу в Telegram
           </p>
           <button onClick={() => setClose(false)} className="absolute right-2">
             <X />

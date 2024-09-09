@@ -14,7 +14,7 @@ export default function PhotoUpload() {
   };
 
   return (
-    <div className="bg-[#17302E] py-2 px-4 border border-[#3C7D77] space-y-1 text-white rounded-lg shadow-2xl max-w-md mx-auto">
+    <div className="bg-[#17302E] box-sh py-2 px-4 border border-[#3C7D77] space-y-1 text-white rounded-lg shadow-2xl md:max-w-md mx-auto">
       <div className="flex justify-between items-center w-full">
         <p className="text-[9px] font-medium">photovalorant.png</p>
         <X className="w-3 h-3 cursor-pointer" />

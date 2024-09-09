@@ -13,10 +13,10 @@ const Battlefield = () => {
       <MaxWidth>
         {/* 1 chisi */}
         <div className="w-full text-white space-y-3 pt-24">
-          <p className="font-extrabold md:text-[63px] text-5xl">
+          <p className="font-extrabold md:text-[63px] sm:text-5xl text-xl">
             BATTLEFIELD 4 <span className="text-[#61FFF5]">PROPHET</span>
           </p>
-          <p className="text-[19px] font-semibold">
+          <p className="sm:text-[19px] text-base font-semibold">
             ИГРА:{' '}
             <span className="text-[#61FFF5]">
               CALL OF DUTY MODERN WARFARE 3
@@ -30,11 +30,11 @@ const Battlefield = () => {
               background:
                 'linear-gradient(150.74deg, #17302E 8.29%, #48968F 189.21%)',
             }}
-            className="border-2 border-[#5DFEF4] rounded-2xl shadow-xl p-5 w-full max-w-[840px]"
+            className="border-2 box-sh border-[#5DFEF4] rounded-2xl shadow-xl p-5 w-full max-w-[840px]"
           >
             <div className="py-6 px-5 space-y-5 text-white border-[#5DFEF4] border-dashed border-2 w-full h-full border-b-0 rounded-2xl rounded-b-none">
               {/* 1 */}
-              <div className="flex items-center justify-between">
+              <div className="flex max-sm:flex-col items-center justify-between">
                 <h1 className="md:text-[28px] text-lg pl-5 font-extrabold">
                   PROPHET <span className="text-[#61FFF6]">CHEAT</span>
                 </h1>
@@ -53,7 +53,7 @@ const Battlefield = () => {
 
               {/* 3 */}
               <div className="space-y-5">
-                <h1 className="font-extrabold text-[23px]">
+                <h1 className="font-extrabold sm:text-[23px] text-base">
                   ФУНКЦИИ <span className="text-[#5DF6EC]">ЧИТА</span>
                 </h1>
                 <div className="flex items-center gap-2 flex-wrap">
@@ -75,25 +75,27 @@ const Battlefield = () => {
                   })}
                 </div>
 
-                <div className="border-2 text-white bg-[#17302E] shadow-2xl border-[#36FFF3] rounded-lg p-5">
+                <div className="border-2 box-sh text-white bg-[#17302E] shadow-2xl border-[#36FFF3] rounded-lg p-5">
                   <div className="space-y-4">
-                    <h1 className="text-[21px] font-bold">
+                    <h1 className="sm:text-[21px] text-base font-bold">
                       ФУНКЦИЯ: <span className="text-[#5DF6EC]">{active}</span>
                     </h1>
                     <ul className="space-y-3">
-                      <li className="md:text-lg text-sm flex items-center gap-x-2 font-semibold">
+                      <li className="md:text-lg sm:text-sm text-base flex items-center gap-x-2 font-semibold">
                         <img width={18} height={18} src="re.png" alt="" />
                         Aim Enable
                       </li>
-                      <li className="md:text-lg text-sm flex items-center gap-x-2 font-semibold">
+                      <li className="md:text-lg sm:text-sm text-base flex items-center gap-x-2 font-semibold">
                         <img width={18} height={18} src="re.png" alt="" />
-                        Bone Selector (Head/Neck/Chest/Arms/Legs)
+                        Bone Selector <br className="sm:hidden" />{' '}
+                        (Head/Neck/Chest <br className="sm:hidden" />{' '}
+                        /Arms/Legs)
                       </li>
-                      <li className="md:text-lg text-sm flex items-center gap-x-2 font-semibold">
+                      <li className="md:text-lg sm:text-sm text-base flex items-center gap-x-2 font-semibold">
                         <img width={18} height={18} src="re.png" alt="" />
                         Silent Aim
                       </li>
-                      <li className="md:text-lg text-sm flex items-center gap-x-2 font-semibold">
+                      <li className="md:text-lg sm:text-sm text-base flex items-center gap-x-2 font-semibold">
                         <img width={18} height={18} src="re.png" alt="" />
                         Auto Fire
                       </li>
@@ -103,7 +105,7 @@ const Battlefield = () => {
                 <h1 className="font-extrabold text-[23px]">
                   ОПИСАНИЕ <span className="text-[#5DF6EC]">ЧИТА</span>
                 </h1>
-                <div className="border-2 text-white bg-[#17302E] shadow-2xl border-[#36FFF3] rounded-lg p-5">
+                <div className="border-2 box-sh text-white bg-[#17302E] shadow-2xl border-[#36FFF3] rounded-lg p-5">
                   <div className="space-y-4">
                     <p className="text-[15px] font-medium">
                       Чит Ring-1 на игру Destiny 2, зарекомендовал себя
@@ -117,8 +119,8 @@ const Battlefield = () => {
                   ОБЯЗАТЕЛЬНО ДЛЯ
                   <span className="text-[#5DF6EC]">ЧИТА</span>
                 </h1>
-                <div className="border-2 text-white bg-[#17302E] shadow-2xl border-[#36FFF3] rounded-lg p-5">
-                  <div className="flex items-center gap-x-2">
+                <div className="border-2 box-sh text-white bg-[#17302E] shadow-2xl border-[#36FFF3] rounded-lg p-5">
+                  <div className="flex max-sm:flex-col items-center sm:gap-x-2">
                     <img src="usb.png" alt="" />
                     <p className="font-bold text-[19px]">
                       Для работы чита, вам понадобиться флешка
@@ -135,7 +137,7 @@ const Battlefield = () => {
                 background:
                   'linear-gradient(150.74deg, #17302E 8.29%, #48968F 189.21%)',
               }}
-              className="border-2 border-[#5DFEF4] rounded-2xl shadow-xl p-5 w-full h-full"
+              className="border-2 box-sh border-[#5DFEF4] rounded-2xl shadow-xl p-5 w-full h-full"
             >
               <div className="py-6 px-5 space-y-5 text-white border-[#5DFEF4] border-dashed border-2 w-full h-full border-b-0 rounded-2xl rounded-b-none">
                 <div className="text-white space-y-5">
@@ -181,7 +183,7 @@ const Battlefield = () => {
                     })}
                   </div>
 
-                  <div className="flex justify-between items-center">
+                  <div className="flex max-sm:flex-col max-sm:gap-3 justify-between items-center">
                     <h1 className="font-bold text-4xl">2200₽</h1>
                     <button className="font-semibold text-base rounded-lg bg-[#4CB4AD] px-6 py-2">
                       Перейти к оплате
@@ -199,15 +201,15 @@ const Battlefield = () => {
                     </p>
                   </div>
 
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-x-4">
+                  <div className="flex max-sm:flex-col max-sm:gap-2 justify-between items-center">
+                    <div className="flex max-sm:w-full items-center gap-x-4">
                       <img src="mw.png" width={31} height={31} alt="" />
                       <p className="text-sm font-light">
                         Есть вопросили <br /> проблема?
                       </p>
                     </div>
 
-                    <button className="font-semibold text-base rounded-lg bg-[#4CB4AD] px-6 py-2">
+                    <button className="font-semibold max-sm:w-full text-base rounded-lg bg-[#4CB4AD] px-6 py-2">
                       Поддержка
                     </button>
                   </div>
@@ -220,7 +222,7 @@ const Battlefield = () => {
                 background:
                   'linear-gradient(150.74deg, #17302E 8.29%, #48968F 189.21%)',
               }}
-              className="border-2 border-[#5DFEF4] rounded-2xl shadow-xl p-5 w-full"
+              className="border-2 box-sh border-[#5DFEF4] rounded-2xl shadow-xl p-5 w-full"
             >
               <div className="py-6 px-5 space-y-5 text-white border-[#5DFEF4] border-dashed border-2 w-full h-full border-b-0 rounded-2xl rounded-b-none">
                 <div className="space-y-5">
@@ -228,7 +230,7 @@ const Battlefield = () => {
                     <div key={item.name} className="flex items-center gap-x-4">
                       <img width={43} height={43} src={item.icon} alt="" />
                       <div className="">
-                        <p className="font-medium  text-lg leading-5 text-white/45">
+                        <p className="font-medium  sm:text-lg text-base leading-5 text-white/45">
                           {item.title}
                         </p>
                         <p className="font-bold text-lg">{item.name}</p>
