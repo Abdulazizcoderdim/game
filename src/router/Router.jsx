@@ -1,9 +1,12 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Layout from '../layout/Layout';
+import Auth from '../pages/Auth';
 import Battlefield from '../pages/Battlefield';
 import Faq from '../pages/Faq';
 import Home from '../pages/Home';
+import News from '../pages/News';
 import NotFound from '../pages/NotFound';
+import PrivateChat from '../pages/PrivateChat';
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +28,18 @@ export const router = createBrowserRouter([
       {
         path: '/support',
         element: <Battlefield />,
+      },
+      {
+        path: '/auth',
+        element: <Auth />,
+      },
+      {
+        path: '/news',
+        element: <News />,
+      },
+      {
+        path: '/private',
+        element: <PrivateChat />,
       },
     ],
   },

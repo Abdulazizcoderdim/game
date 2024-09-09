@@ -56,7 +56,7 @@ export default function GameCard({ src, isNew, top, hot, rate }) {
                 </button>
               )}
             </div>
-            <h2 className="text-white text-[17px] font-semibold">Cheat</h2>
+            <h2 className="text-white text-start text-[17px] font-semibold">Cheat</h2>
           </div>
           <div className="text-white ">
             <p className="text-end text-[11px] text-[#A6ACC2] font-semibold">
