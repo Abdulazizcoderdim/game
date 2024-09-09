@@ -15,6 +15,18 @@ export const navItems = [
     name: 'Новости',
     path: '/news',
   },
+  {
+    name: 'Auth',
+    path: '/auth',
+  },
+  {
+    name: 'Chat',
+    path: '/private',
+  },
+  {
+    name: 'Каталог игр',
+    path: '/catalogGame',
+  },
 ];
 
 export const functionChit = [
