@@ -1,12 +1,14 @@
-import { X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { navItems } from '../constants';
 import MaxWidth from './MaxWidth';
+import MobilNav from './MobilNav';
 
 const Header = () => {
   const { pathname } = useLocation();
   const [close, setClose] = useState(true);
+  const [modalTg, setModalTg] = useState(false);
   return (
     <div>
       <MaxWidth className="py-4 bg-[#041F1D] text-white">
@@ -16,7 +18,7 @@ const Header = () => {
             <img width={116} height={28} src="TRY2WIN.png" alt="" />
           </Link>
 
-          <ul className="flex items-center gap-x-10">
+          <ul className="lg:flex hidden items-center gap-x-10">
             {navItems.map(item => {
               const isActive = pathname === item.path;
               return (
@@ -34,7 +36,7 @@ const Header = () => {
             })}
           </ul>
 
-          <div className="flex items-center gap-x-4">
+          <div className="lg:flex hidden items-center gap-x-4">
             <img width={20} height={20} src="Telegram.png" alt="" />
             <img width={20} height={20} src="Discord.png" alt="" />
             <select
@@ -50,7 +52,16 @@ const Header = () => {
               </option>
             </select>
           </div>
+
+          <div
+            onClick={() => setModalTg(prev => !prev)}
+            className="text-white cursor-pointer"
+          >
+            {modalTg ? <X /> : <Menu />}
+          </div>
+          {/* modal */}
         </div>
+        {modalTg && <MobilNav />}
       </MaxWidth>
 
       {close && (
