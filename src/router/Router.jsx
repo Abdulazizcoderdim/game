@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Layout from '../layout/Layout';
+import Battlefield from '../pages/Battlefield';
 import Faq from '../pages/Faq';
 import Home from '../pages/Home';
 
@@ -15,6 +16,10 @@ export const router = createBrowserRouter([
       {
         path: '/catalog',
         element: <Faq />,
+      },
+      {
+        path: '/support',
+        element: <Battlefield />, 
       },
     ],
   },

@@ -9,3 +9,12 @@
   background-color: #205b56;
   background-size: cover;
 }
+
+@layer utilities {
+  .text-shadow-custom {
+    text-shadow: 0px 0px 5px #18FB8E;
+  }
+  .text-shadow-custom2{
+    text-shadow: 0px 0px 5px #17F1FF;
+  }
+}
