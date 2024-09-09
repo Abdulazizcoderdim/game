@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import GameCard from '../components/GameCard';
 import MaxWidth from '../components/MaxWidth';
 import ScrollableImageGallery from '../components/ScrollableImageGallery ';
 import { functionChit, settingsInfo, zakazData } from '../constants';
@@ -8,7 +9,7 @@ const Battlefield = () => {
   const [active, setActive] = useState('AIM-BOT');
   const [zakaz, setZakaz] = useState(0);
   return (
-    <div>
+    <div className="pb-20">
       <MaxWidth>
         {/* 1 chisi */}
         <div className="w-full text-white space-y-3 pt-24">
@@ -23,7 +24,7 @@ const Battlefield = () => {
           </p>
         </div>
         {/* 2 chisi */}
-        <div className="flex gap-10 mt-7">
+        <div className="flex max-lg:flex-col gap-10 mt-7">
           <div
             style={{
               background:
@@ -34,14 +35,14 @@ const Battlefield = () => {
             <div className="py-6 px-5 space-y-5 text-white border-[#5DFEF4] border-dashed border-2 w-full h-full border-b-0 rounded-2xl rounded-b-none">
               {/* 1 */}
               <div className="flex items-center justify-between">
-                <h1 className="text-[28px] pl-5 font-extrabold">
+                <h1 className="md:text-[28px] text-lg pl-5 font-extrabold">
                   PROPHET <span className="text-[#61FFF6]">CHEAT</span>
                 </h1>
-                <div className="flex items-center gap-x-3">
-                  <button className="rounded-md text-shadow-custom px-3 py-1 border-2 border-[#18FB8E] text-[#18FB8E] drop-shadow-md">
+                <div className="flex items-center max-sm:flex-col max-sm:space-y-3 gap-x-3">
+                  <button className="rounded-md max-sm:text-sm text-shadow-custom px-3 py-1 border-2 border-[#18FB8E] text-[#18FB8E] drop-shadow-md">
                     UNDETECTED
                   </button>
-                  <button className="rounded-md text-shadow-custom2 px-3 py-1 border-2 border-[#17F1FF] text-[#17F1FF] drop-shadow-md">
+                  <button className="rounded-md max-sm:text-sm text-shadow-custom2 px-3 py-1 border-2 border-[#17F1FF] text-[#17F1FF] drop-shadow-md">
                     UNDETECTED
                   </button>
                 </div>
@@ -80,19 +81,19 @@ const Battlefield = () => {
                       ФУНКЦИЯ: <span className="text-[#5DF6EC]">{active}</span>
                     </h1>
                     <ul className="space-y-3">
-                      <li className="text-lg flex items-center gap-x-2 font-semibold">
+                      <li className="md:text-lg text-sm flex items-center gap-x-2 font-semibold">
                         <img width={18} height={18} src="re.png" alt="" />
                         Aim Enable
                       </li>
-                      <li className="text-lg flex items-center gap-x-2 font-semibold">
+                      <li className="md:text-lg text-sm flex items-center gap-x-2 font-semibold">
                         <img width={18} height={18} src="re.png" alt="" />
                         Bone Selector (Head/Neck/Chest/Arms/Legs)
                       </li>
-                      <li className="text-lg flex items-center gap-x-2 font-semibold">
+                      <li className="md:text-lg text-sm flex items-center gap-x-2 font-semibold">
                         <img width={18} height={18} src="re.png" alt="" />
                         Silent Aim
                       </li>
-                      <li className="text-lg flex items-center gap-x-2 font-semibold">
+                      <li className="md:text-lg text-sm flex items-center gap-x-2 font-semibold">
                         <img width={18} height={18} src="re.png" alt="" />
                         Auto Fire
                       </li>
@@ -242,17 +243,32 @@ const Battlefield = () => {
         {/* 3 chisi */}
         <div className="text-white mt-20">
           <div className="space-y-4">
-            <h1 className="font-extrabold text-[43px]">
+            <h1 className="font-extrabold md:text-[43px] text-3xl">
               <span className="text-[#5DFFF5]">РЕКОМЕНДАЦИЯ</span> ОТ НАС
             </h1>
-            <p className="text-[23px] font-normal">
+            <p className="md:text-[23px] text-lg font-normal">
               Более 500 читов на различные игры и мы подобрали для <br /> вас
               самые популярные игры
             </p>
           </div>
 
           <div className="mt-14">
-            <div className="grid grid-cols-4 gap-x-10 gap-y-5"></div>
+            <div className="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5">
+              <GameCard
+                src="g1.png"
+                isNew={true}
+                top={true}
+                hot={true}
+                rate={false}
+              />
+              <GameCard src="g2.png" hot={true} />
+              <GameCard src={'g3.png'} rate={true} top={true} />
+              <GameCard src={'g3.png'} rate={true} top={true} />
+              <GameCard src="g1.png" isNew={true} top={true} hot={true} />
+              <GameCard src="g2.png" hot={true} />
+              <GameCard src={'g3.png'} rate={true} top={true} />
+              <GameCard src={'g3.png'} rate={true} top={true} />
+            </div>
           </div>
         </div>
       </MaxWidth>
