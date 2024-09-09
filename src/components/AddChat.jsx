@@ -70,10 +70,12 @@ const AddChat = () => {
       </div>
 
       <div className="flex gap-5 mt-4">
-        <textarea
-          className="py-2 shadow-2xl h-[265px] px-4 font-medium text-base placeholder:font-medium placeholder:text-base placeholder:text-white bg-[#17302E] border-[#3C7D77] border-2 rounded-lg"
-          placeholder="Описание чита (RU)"
-        ></textarea>
+        <div className="">
+          <textarea
+            className="py-2 max-h-[345px] h-full shadow-2xl px-4 font-medium text-base placeholder:font-medium placeholder:text-base placeholder:text-white bg-[#17302E] border-[#3C7D77] border-2 rounded-lg"
+            placeholder="Описание чита (RU)"
+          ></textarea>
+        </div>
 
         <div className="flex flex-col gap-3 max-w-[248px] w-full">
           <h1 className="font-medium text-base">Статус чита</h1>

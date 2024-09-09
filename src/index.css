@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .main1 {
-  background-image: url('body2.png');
+  background-image: url('/body2.png');
   min-height: 2670px;
   background-repeat: no-repeat;
   background-color: #205b56;
