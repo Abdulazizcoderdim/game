@@ -56,7 +56,7 @@ const Battlefield = () => {
                 <h1 className="font-extrabold sm:text-[23px] text-base">
                   ФУНКЦИИ <span className="text-[#5DF6EC]">ЧИТА</span>
                 </h1>
-                <div className="flex items-center gap-2 flex-wrap">
+                <div className="flex items-center gap-3 flex-wrap">
                   {functionChit.map((item, i) => {
                     const isActive = active === item.name;
                     return (
@@ -64,9 +64,10 @@ const Battlefield = () => {
                         onClick={() => setActive(item.name)}
                         key={i}
                         className={`${
+                          (' text-sm font-bold border-2',
                           isActive
-                            ? 'border-2 border-[#36FFF3] rounded-lg bg-[#05413D] py-1 px-4 shadow-[0_0_4px_1px_rgba(0,255,255,0.6)]'
-                            : 'px-5 py-2 border-2 text-sm font-bold border-[#2C7B73] text-[#2C7B73] bg-[#0B1F1D] rounded-md'
+                            ? 'border-[#36FFF3] border-2 rounded-lg bg-[#05413D] px-5 py-2 shadow-[0_0_4px_1px_rgba(0,255,255,0.6)]'
+                            : 'px-5 py-2 border-2 border-[#2C7B73] text-[#2C7B73] bg-[#0B1F1D] rounded-lg')
                         } `}
                       >
                         {item.name}
