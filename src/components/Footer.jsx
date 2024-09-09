@@ -15,20 +15,20 @@ const Footer = () => {
             <img width={116} height={28} src="TRY2WIN.png" alt="" />
           </Link>
           <ul className="grid lg:grid-cols-5 grid-cols-2 max-lg:gap-y-5 lg:gap-x-3">
-            <li className="xl:text-xl text-lg font-normal">
+            <li className="xl:text-lg text-base font-normal">
               <Link to={'#'}>Договор оферты</Link>
             </li>
-            <li className="xl:text-xl text-lg font-normal">
-              <Link to={'#'}>Поддержка</Link>
+            <li className="xl:text-lg text-base font-normal">
+              <Link to={'/support'}>Поддержка</Link>
             </li>
-            <li className="xl:text-xl text-lg font-normal">
-              <Link to={'#'}>Новости</Link>
+            <li className="xl:text-lg text-base font-normal">
+              <Link to={'/news'}>Новости</Link>
             </li>
-            <li className="xl:text-xl text-lg font-normal">
-              <Link to={'#'}>Главная</Link>
+            <li className="xl:text-lg text-base font-normal">
+              <Link to={'/'}>Главная</Link>
             </li>
-            <li className="xl:text-xl text-lg font-normal">
-              <Link to={'#'}>Каталог игр</Link>
+            <li className="xl:text-lg text-base font-normal">
+              <Link to={'/catalog'}>Каталог игр</Link>
             </li>
           </ul>
           <div>
