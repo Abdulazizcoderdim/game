@@ -12,9 +12,10 @@
 
 @layer utilities {
   .text-shadow-custom {
-    text-shadow: 0px 0px 5px #18FB8E;
+    text-shadow: 0px 0px 5px #18fb8e;
   }
-  .text-shadow-custom2{
-    text-shadow: 0px 0px 5px #17F1FF;
+  .text-shadow-custom2 {
+    text-shadow: 0px 0px 5px #17f1ff;
   }
+
 }
