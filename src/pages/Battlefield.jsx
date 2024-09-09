@@ -239,6 +239,22 @@ const Battlefield = () => {
             </div>
           </div>
         </div>
+        {/* 3 chisi */}
+        <div className="text-white mt-20">
+          <div className="space-y-4">
+            <h1 className="font-extrabold text-[43px]">
+              <span className="text-[#5DFFF5]">РЕКОМЕНДАЦИЯ</span> ОТ НАС
+            </h1>
+            <p className="text-[23px] font-normal">
+              Более 500 читов на различные игры и мы подобрали для <br /> вас
+              самые популярные игры
+            </p>
+          </div>
+
+          <div className="mt-14">
+            <div className="grid grid-cols-4 gap-x-10 gap-y-5"></div>
+          </div>
+        </div>
       </MaxWidth>
     </div>
   );

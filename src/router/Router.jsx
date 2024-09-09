@@ -3,12 +3,17 @@ import Layout from '../layout/Layout';
 import Battlefield from '../pages/Battlefield';
 import Faq from '../pages/Faq';
 import Home from '../pages/Home';
+import NotFound from '../pages/NotFound';
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
     children: [
+      {
+        path: '/*',
+        element: <NotFound />,
+      },
       {
         path: '/',
         element: <Home />,
@@ -19,7 +24,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/support',
-        element: <Battlefield />, 
+        element: <Battlefield />,
       },
     ],
   },
