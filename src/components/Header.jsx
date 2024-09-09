@@ -55,7 +55,7 @@ const Header = () => {
 
           <div
             onClick={() => setModalTg(prev => !prev)}
-            className="text-white cursor-pointer"
+            className="text-white lg:hidden cursor-pointer"
           >
             {modalTg ? <X /> : <Menu />}
           </div>
@@ -66,7 +66,7 @@ const Header = () => {
 
       {close && (
         <div className="flex bg-[#27A79F] items-center py-2 text-white relative">
-          <p className="font-medium text-base w-full text-center">
+          <p className="font-medium sm:text-base text-xs w-full text-center">
             Присоединяйтесь к нашему сообществу в Telegram
           </p>
           <button onClick={() => setClose(false)} className="absolute right-2">

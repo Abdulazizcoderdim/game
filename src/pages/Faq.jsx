@@ -4,9 +4,9 @@ import MaxWidth from '../components/MaxWidth';
 
 const Faq = () => {
   return (
-    <div>
+    <div className="pb-20">
       <div className="w-full text-center text-white space-y-3 pt-24">
-        <p className="font-extrabold text-[63px]">
+        <p className="font-extrabold md:text-[63px] text-5xl">
           FAQ <span className="text-[#61FFF5]">&</span> ПОДДЕРЖКА
         </p>
         <p className="text-[19px] font-semibold">
@@ -16,8 +16,14 @@ const Faq = () => {
       <MaxWidth className="space-y-10">
         <div>
           <div className="text-white mt-8">
-            <p className="flex items-center gap-x-4 text-[26px] font-bold">
-              <img width={59} height={59} src="nast.png" alt="" />
+            <p className="flex items-center gap-x-4 md:text-[26px] text-xl font-bold">
+              <img
+                width={59}
+                height={59}
+                className="max-sm:w-8 max-sm:h-8"
+                src="nast.png"
+                alt=""
+              />
               Необходимые <span className="text-[#61FFF5]">компоненты</span>
             </p>
           </div>
@@ -51,8 +57,14 @@ const Faq = () => {
         </div>
         <div>
           <div className="text-white mt-8">
-            <p className="flex items-center gap-x-4 text-[26px] font-bold">
-              <img width={59} height={59} src="mac.png" alt="" />
+            <p className="flex items-center gap-x-4 md:text-[26px] text-xl font-bold">
+              <img
+                className="max-sm:w-8 max-sm:h-8"
+                width={59}
+                height={59}
+                src="mac.png"
+                alt=""
+              />
               Дополнительные <span className="text-[#61FFF5]">параметры</span>
             </p>
           </div>
@@ -76,8 +88,14 @@ const Faq = () => {
         </div>
         <div>
           <div className="text-white mt-8">
-            <p className="flex items-center gap-x-4 text-[26px] font-bold">
-              <img width={59} height={59} src="c.png" alt="" />
+            <p className="flex items-center gap-x-4 md:text-[26px] text-xl font-bold">
+              <img
+                className="max-sm:w-8 max-sm:h-8"
+                width={59}
+                height={59}
+                src="c.png"
+                alt=""
+              />
               Вспомогательные <span className="text-[#61FFF5]">программы</span>
             </p>
           </div>
@@ -92,8 +110,14 @@ const Faq = () => {
         </div>
         <div>
           <div className="text-white mt-8">
-            <p className="flex items-center gap-x-4 text-[26px] font-bold">
-              <img width={59} height={59} src="sup.png" alt="" />
+            <p className="flex items-center gap-x-4 md:text-[26px] text-xl font-bold">
+              <img
+                className="max-sm:w-8 max-sm:h-8"
+                width={59}
+                height={59}
+                src="sup.png"
+                alt=""
+              />
               Техническая <span className="text-[#61FFF5]">поддержка</span>
             </p>
           </div>
@@ -103,7 +127,7 @@ const Faq = () => {
                 background:
                   'linear-gradient(150.74deg, #17302E 8.29%, #48968F 189.21%)',
               }}
-              className="border-2 border-[#5DFEF4] rounded-2xl shadow-xl p-2 min-w-[350px]"
+              className="border-2 border-[#5DFEF4] rounded-2xl shadow-xl p-2 md:min-w-[350px] max-sm:w-full"
             >
               <div className="py-6 px-5 space-y-7 text-white border-[#5DFEF4] border-dashed border-2 w-full h-full border-b-0 rounded-2xl rounded-b-none">
                 <div className="flex items-center gap-x-3">
