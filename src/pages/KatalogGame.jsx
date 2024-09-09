@@ -5,14 +5,14 @@ import MaxWidth from '../components/MaxWidth';
 
 const data = ['POPULAR', 'TOP', 'NEW', 'RATE', 'LATER'];
 
-const News = () => {
+const KatalogGame = () => {
   const [active, setActive] = useState(0);
   return (
     <div>
       <MaxWidth className="pt-20 text-center text-white space-y-5">
         <div className="max-w-xl mx-auto">
           <h1 className="font-black md:text-[56px] text-3xl">
-            BATTLEFIELD <span className="text-[#60FFF5]">4</span>
+            КАТАЛОГ <span className="text-[#60FFF5]">ИГР</span>
           </h1>
           <p className="font-normal mt-8 md:text-2xl text-xl">
             Большой выбор различных игр, воспользуйтесь поиском для быстрого
@@ -102,4 +102,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default KatalogGame;
