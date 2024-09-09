@@ -1,7 +1,12 @@
 import React from 'react';
+import PanelAdminstrator from './PanelAdminstrator';
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <PanelAdminstrator />
+    </div>
+  );
 };
 
 export default Home;
