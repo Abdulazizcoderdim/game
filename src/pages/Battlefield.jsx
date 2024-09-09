@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import MaxWidth from '../components/MaxWidth';
 import ScrollableImageGallery from '../components/ScrollableImageGallery ';
-import { functionChit, zakazData } from '../constants';
+import { functionChit, settingsInfo, zakazData } from '../constants';
 
 const Battlefield = () => {
   const [active, setActive] = useState('AIM-BOT');
@@ -134,10 +134,10 @@ const Battlefield = () => {
                 background:
                   'linear-gradient(150.74deg, #17302E 8.29%, #48968F 189.21%)',
               }}
-              className="border-2 border-[#5DFEF4] rounded-2xl shadow-xl p-5 w-full"
+              className="border-2 border-[#5DFEF4] rounded-2xl shadow-xl p-5 w-full h-full"
             >
               <div className="py-6 px-5 space-y-5 text-white border-[#5DFEF4] border-dashed border-2 w-full h-full border-b-0 rounded-2xl rounded-b-none">
-                <div className="text-white space-y-4">
+                <div className="text-white space-y-5">
                   <h1 className="text-[23px] font-extrabold">
                     ОФОРМЛЕНИЕ <span className="text-[#61FFF5]">ЗАКАЗА</span>
                   </h1>
@@ -145,7 +145,7 @@ const Battlefield = () => {
                     Выберите удобный тарифный план для покупки продукта
                   </p>
 
-                  <div className="pt-5 space-y-3">
+                  <div className="pt-5 space-y-7">
                     {zakazData.map((item, i) => {
                       const isActive = i === zakaz;
                       return (
@@ -221,7 +221,21 @@ const Battlefield = () => {
               }}
               className="border-2 border-[#5DFEF4] rounded-2xl shadow-xl p-5 w-full"
             >
-              <div className="py-6 px-5 space-y-5 text-white border-[#5DFEF4] border-dashed border-2 w-full h-full border-b-0 rounded-2xl rounded-b-none"></div>
+              <div className="py-6 px-5 space-y-5 text-white border-[#5DFEF4] border-dashed border-2 w-full h-full border-b-0 rounded-2xl rounded-b-none">
+                <div className="space-y-5">
+                  {settingsInfo.map(item => (
+                    <div key={item.name} className="flex items-center gap-x-4">
+                      <img width={43} height={43} src={item.icon} alt="" />
+                      <div className="">
+                        <p className="font-medium  text-lg leading-5 text-white/45">
+                          {item.title}
+                        </p>
+                        <p className="font-bold text-lg">{item.name}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

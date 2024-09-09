@@ -62,3 +62,36 @@ export const zakazData = [
     money: '1190₽',
   },
 ];
+
+export const settingsInfo = [
+  {
+    icon: 'str.png',
+    title: 'Игровой клиент:',
+    name: 'Steam',
+  },
+  {
+    icon: 'pr.png',
+    title: 'Поддерживаемые процессоры::',
+    name: 'Intel, Amd',
+  },
+  {
+    icon: 'win.png',
+    title: 'Поддерживаемые OCs:',
+    name: 'Windows 10 (21H1-22H2) Windows 11 all versions',
+  },
+  {
+    icon: 'n.png',
+    title: 'Спуфер:',
+    name: 'Нет',
+  },
+  {
+    icon: 'sh.png',
+    title: 'Античит:',
+    name: 'Ricochet',
+  },
+  {
+    icon: 'wc.png',
+    title: 'Режим окна:',
+    name: 'Все',
+  },
+];
