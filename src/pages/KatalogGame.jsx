@@ -1,6 +1,8 @@
 import { Search } from 'lucide-react';
 import React, { useState } from 'react';
 import GameCard from '../components/GameCard';
+import GameCard2 from '../components/GameCard2';
+import GameCard3 from '../components/GameCard3';
 import MaxWidth from '../components/MaxWidth';
 
 const data = ['POPULAR', 'TOP', 'NEW', 'RATE', 'LATER'];
@@ -47,20 +49,14 @@ const KatalogGame = () => {
         </div>
 
         <div className="sm:pt-10 pb-10 grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5">
-          <GameCard
-            src="g1.png"
-            isNew={true}
-            top={true}
-            hot={true}
-            rate={false}
-          />
-          <GameCard src="g2.png" hot={true} />
-          <GameCard src={'g3.png'} rate={true} top={true} />
-          <GameCard src={'g3.png'} rate={true} top={true} />
-          <GameCard src="g1.png" isNew={true} top={true} hot={true} />
-          <GameCard src="g2.png" hot={true} />
-          <GameCard src={'g3.png'} rate={true} top={true} />
-          <GameCard src={'g3.png'} rate={true} top={true} />
+          <GameCard isNew={true} top={true} hot={true} rate={false} />
+          <GameCard2 hot={true} />
+          <GameCard3 rate={true} top={true} />
+          <GameCard3 rate={true} top={true} />
+          <GameCard isNew={true} top={true} hot={true} rate={false} />
+          <GameCard2 hot={true} />
+          <GameCard3 rate={true} top={true} />
+          <GameCard3 rate={true} top={true} />
         </div>
 
         <div className="w-full border-2 flex-wrap bg-[#0E1A19] rounded-lg border-dashed border-[#55FFF5] px-20 py-14 text-ellipsis flex items-center justify-center gap-4 text-[#53FFF5]">
@@ -72,30 +68,18 @@ const KatalogGame = () => {
         </div>
 
         <div className="pt-10 grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5">
-          <GameCard
-            src="g1.png"
-            isNew={true}
-            top={true}
-            hot={true}
-            rate={false}
-          />
-          <GameCard src="g2.png" hot={true} />
-          <GameCard src={'g3.png'} rate={true} top={true} />
-          <GameCard src={'g3.png'} rate={true} top={true} />
-          <GameCard src="g1.png" isNew={true} top={true} hot={true} />
-          <GameCard src="g2.png" hot={true} />
-          <GameCard src={'g3.png'} rate={true} top={true} />
-          <GameCard src={'g3.png'} rate={true} top={true} />
-          <GameCard
-            src="g1.png"
-            isNew={true}
-            top={true}
-            hot={true}
-            rate={false}
-          />
-          <GameCard src="g2.png" hot={true} />
-          <GameCard src={'g3.png'} rate={true} top={true} />
-          <GameCard src={'g3.png'} rate={true} top={true} />
+          <GameCard isNew={true} top={true} hot={true} rate={false} />
+          <GameCard2 hot={true} />
+          <GameCard3 rate={true} top={true} />
+          <GameCard3 rate={true} top={true} />
+          <GameCard isNew={true} top={true} hot={true} rate={false} />
+          <GameCard2 hot={true} />
+          <GameCard3 rate={true} top={true} />
+          <GameCard3 rate={true} top={true} />
+          <GameCard isNew={true} top={true} hot={true} rate={false} />
+          <GameCard2 hot={true} />
+          <GameCard3 rate={true} top={true} />
+          <GameCard3 rate={true} top={true} />
         </div>
       </MaxWidth>
     </div>

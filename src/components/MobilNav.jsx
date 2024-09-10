@@ -21,6 +21,22 @@ const MobilNav = () => {
             </Link>
           );
         })}
+        <div className="flex items-center pl-3 gap-x-4">
+          <img width={20} height={20} src="Telegram.png" alt="" />
+          <img width={20} height={20} src="Discord.png" alt="" />
+          <select
+            defaultValue={'ru'}
+            className="border-none bg-transparent outline-none"
+            id="lang"
+          >
+            <option className="bg-[#041F1D]" value="ru">
+              RU
+            </option>
+            <option className="bg-[#041F1D]" value="en">
+              EN
+            </option>
+          </select>
+        </div>
       </div>
     </div>
   );

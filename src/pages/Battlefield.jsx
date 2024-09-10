@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import GameCard from '../components/GameCard';
+import GameCard2 from '../components/GameCard2';
+import GameCard3 from '../components/GameCard3';
 import MaxWidth from '../components/MaxWidth';
 import ScrollableImageGallery from '../components/ScrollableImageGallery ';
 import { functionChit, settingsInfo, zakazData } from '../constants';
@@ -257,20 +259,14 @@ const Battlefield = () => {
 
           <div className="mt-14">
             <div className="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5">
-              <GameCard
-                src="g1.png"
-                isNew={true}
-                top={true}
-                hot={true}
-                rate={false}
-              />
-              <GameCard src="g2.png" hot={true} />
-              <GameCard src={'g3.png'} rate={true} top={true} />
-              <GameCard src={'g3.png'} rate={true} top={true} />
-              <GameCard src="g1.png" isNew={true} top={true} hot={true} />
-              <GameCard src="g2.png" hot={true} />
-              <GameCard src={'g3.png'} rate={true} top={true} />
-              <GameCard src={'g3.png'} rate={true} top={true} />
+              <GameCard isNew={true} top={true} hot={true} rate={false} />
+              <GameCard2 hot={true} />
+              <GameCard3 rate={true} top={true} />
+              <GameCard3 rate={true} top={true} />
+              <GameCard isNew={true} top={true} hot={true} rate={false} />
+              <GameCard2 hot={true} />
+              <GameCard3 rate={true} top={true} />
+              <GameCard3 rate={true} top={true} />
             </div>
           </div>
         </div>

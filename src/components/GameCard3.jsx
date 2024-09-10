@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-const images = ['/g1.png', '/g2.png', '/g3.png', '/g1.png'];
+const images = ['/g3.png', '/g2.png', '/g1.png', '/g3.png'];
 
-export default function GameCard({ isNew, top, hot, rate }) {
+export default function GameCard3({ isNew, top, hot, rate }) {
   const [hover, setHover] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
   const [progress, setProgress] = useState([0, 0, 0, 0]);

@@ -1,6 +1,8 @@
 import { Search } from 'lucide-react';
 import React, { useState } from 'react';
 import GameCard from '../components/GameCard';
+import GameCard2 from '../components/GameCard2';
+import GameCard3 from '../components/GameCard3';
 import MaxWidth from '../components/MaxWidth';
 
 const data = ['POPULAR', 'TOP', 'NEW', 'RATE', 'LATER'];
@@ -213,16 +215,10 @@ const PrivateChat = () => {
           </p>
         </div>
         <div className="sm:pt-10  grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5">
-          <GameCard
-            src="g1.png"
-            isNew={true}
-            top={true}
-            hot={true}
-            rate={false}
-          />
-          <GameCard src="g2.png" hot={true} />
-          <GameCard src={'g3.png'} rate={true} top={true} />
-          <GameCard src={'g3.png'} rate={true} top={true} />
+          <GameCard isNew={true} top={true} hot={true} rate={false} />
+          <GameCard2 hot={true} />
+          <GameCard3 rate={true} top={true} />
+          <GameCard3 rate={true} top={true} />
         </div>
         {/* 2 */}
         <div className="w-full text-center space-y-3">
@@ -236,16 +232,10 @@ const PrivateChat = () => {
           </p>
         </div>
         <div className="sm:pt-10  grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5">
-          <GameCard
-            src="g1.png"
-            isNew={true}
-            top={true}
-            hot={true}
-            rate={false}
-          />
-          <GameCard src="g2.png" hot={true} />
-          <GameCard src={'g3.png'} rate={true} top={true} />
-          <GameCard src={'g3.png'} rate={true} top={true} />
+          <GameCard isNew={true} top={true} hot={true} rate={false} />
+          <GameCard2 hot={true} />
+          <GameCard3 rate={true} top={true} />
+          <GameCard3 rate={true} top={true} />
         </div>
       </MaxWidth>
     </div>
