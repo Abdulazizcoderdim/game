@@ -7,12 +7,12 @@ import GameCard2 from '../components/GameCard2';
 import GameCard3 from '../components/GameCard3';
 import MaxWidth from '../components/MaxWidth';
 
-const data = ['POPULAR', 'TOP', 'NEW', 'RATE', 'LATER'];
-
-const KatalogGame = () => {
+const News = () => {
   const [selectedLanguage] = useRecoilState(languageState);
+  const data = ['POPULAR', 'TOP', 'NEW', 'RATE', 'LATER'];
 
   const [active, setActive] = useState(0);
+  const [nameLevel, setNameLevel] = useState('POPULAR');
   return (
     <div>
       <MaxWidth className="pt-20 text-center text-white space-y-5">
@@ -39,7 +39,7 @@ const KatalogGame = () => {
           <input
             className="font-normal border-none outline-none bg-transparent w-full text-2xl placeholder:font-normal placeholder:text-white placeholder:text-2xl"
             type="text"
-            placeholder="Battlefield"
+            placeholder={selectedLanguage === 'ru' ? 'Battlefield' : 'Поле боя'}
           />
         </div>
 
@@ -48,7 +48,9 @@ const KatalogGame = () => {
             const isActive = i === active;
             return (
               <button
-                onClick={() => setActive(i)}
+                key={i}
+                set
+                onClick={() => (setActive(i), setNameLevel(item))}
                 className={`px-7 ${
                   isActive
                     ? 'border-[#17F1FF] border-2 text-[#17F1FF] bg-[#043633]'
@@ -62,16 +64,43 @@ const KatalogGame = () => {
         </div>
 
         <div className="sm:pt-10 pb-10 grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5">
-          <GameCard isNew={true} top={true} hot={true} rate={false} />
-          <GameCard2 hot={true} />
-          <GameCard3 rate={true} top={true} />
-          <GameCard3 rate={true} top={true} />
-          <GameCard isNew={true} top={true} hot={true} rate={false} />
-          <GameCard2 hot={true} />
-          <GameCard3 rate={true} top={true} />
-          <GameCard3 rate={true} top={true} />
+          {(nameLevel === 'TOP' ||
+            nameLevel === 'LATER' ||
+            nameLevel === 'POPULAR' ||
+            nameLevel === 'HOT' ||
+            nameLevel === 'NEW') && (
+            <GameCard isNew={true} top={true} hot={true} rate={false} />
+          )}
+          {(nameLevel === 'HOT' ||
+            nameLevel === 'LATER' ||
+            nameLevel === 'POPULAR') && <GameCard2 hot={true} />}
+          {(nameLevel === 'RATE' ||
+            nameLevel === 'LATER' ||
+            nameLevel === 'POPULAR' ||
+            nameLevel === 'TOP') && <GameCard3 rate={true} top={true} />}
+          {(nameLevel === 'RATE' ||
+            nameLevel === 'LATER' ||
+            nameLevel === 'POPULAR' ||
+            nameLevel === 'TOP') && <GameCard3 rate={true} top={true} />}
+          {(nameLevel === 'TOP' ||
+            nameLevel === 'LATER' ||
+            nameLevel === 'POPULAR' ||
+            nameLevel === 'HOT' ||
+            nameLevel === 'NEW') && (
+            <GameCard isNew={true} top={true} hot={true} rate={false} />
+          )}
+          {(nameLevel === 'HOT' ||
+            nameLevel === 'LATER' ||
+            nameLevel === 'POPULAR') && <GameCard2 hot={true} />}
+          {(nameLevel === 'RATE' ||
+            nameLevel === 'LATER' ||
+            nameLevel === 'POPULAR' ||
+            nameLevel === 'TOP') && <GameCard3 rate={true} top={true} />}
+          {(nameLevel === 'RATE' ||
+            nameLevel === 'LATER' ||
+            nameLevel === 'POPULAR' ||
+            nameLevel === 'TOP') && <GameCard3 rate={true} top={true} />}
         </div>
-
         <div className="w-full border-2 flex-wrap bg-[#0E1A19] rounded-lg border-dashed border-[#55FFF5] px-20 py-14 text-ellipsis flex items-center justify-center gap-4 text-[#53FFF5]">
           <p className="md:text-[26px] text-xl font-medium">
             {selectedLanguage === 'ru' ? 'РЕКЛАМА' : 'ADVERTISING'}
@@ -93,7 +122,6 @@ const KatalogGame = () => {
             {selectedLanguage === 'ru' ? 'РЕКЛАМА' : 'ADVERTISING'}
           </p>
         </div>
-
         <div className="pt-10 grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5">
           <GameCard isNew={true} top={true} hot={true} rate={false} />
           <GameCard2 hot={true} />
@@ -113,4 +141,4 @@ const KatalogGame = () => {
   );
 };
 
-export default KatalogGame;
+export default News;

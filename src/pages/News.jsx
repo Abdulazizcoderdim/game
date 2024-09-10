@@ -18,7 +18,7 @@ const News = () => {
       <MaxWidth className="pt-20 text-center text-white space-y-5">
         <div className="max-w-xl mx-auto">
           <h1 className="font-black md:text-[56px] text-3xl">
-            {selectedLanguage === 'ru' ? 'НОВОСТИ' : 'BATTLEFIELD'}{' '}
+            {selectedLanguage === 'ru' ? 'BATTLEFIELD' : 'BATTLEFIELD'}{' '}
             <span className="text-[#60FFF5]">4</span>
           </h1>
           <p className="font-normal mt-8 md:text-2xl text-xl">
