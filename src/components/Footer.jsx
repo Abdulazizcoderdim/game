@@ -20,7 +20,7 @@ const Footer = () => {
           </Link>
           <ul className="grid lg:grid-cols-5 grid-cols-2 text-center max-lg:gap-y-5 lg:gap-x-3">
             <li className="xl:text-lg text-base font-normal">
-              <Link to={'/private'}>
+              <Link to={'https://t.me/ShakxzodbekPrivateChannel'}>
                 {selectedLanguage === 'ru'
                   ? 'Договор оферты'
                   : 'Terms of service'}
