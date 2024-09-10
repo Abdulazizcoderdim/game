@@ -1,5 +1,7 @@
 import { Search } from 'lucide-react';
 import React, { useState } from 'react';
+import { useRecoilState } from 'recoil';
+import languageState from '../atom/languageAtom';
 import GameCard from '../components/GameCard';
 import GameCard2 from '../components/GameCard2';
 import GameCard3 from '../components/GameCard3';
@@ -8,17 +10,28 @@ import MaxWidth from '../components/MaxWidth';
 const data = ['POPULAR', 'TOP', 'NEW', 'RATE', 'LATER'];
 
 const KatalogGame = () => {
+  const [selectedLanguage] = useRecoilState(languageState);
+
   const [active, setActive] = useState(0);
   return (
     <div>
       <MaxWidth className="pt-20 text-center text-white space-y-5">
         <div className="max-w-xl mx-auto">
           <h1 className="font-black md:text-[56px] text-3xl">
-            КАТАЛОГ <span className="text-[#60FFF5]">ИГР</span>
+            {selectedLanguage === 'ru' ? (
+              <>
+                КАТАЛОГ <span className="text-[#60FFF5]">ИГР</span>
+              </>
+            ) : (
+              <>
+                GAME <span className="text-[#60FFF5]">CATALOG</span>
+              </>
+            )}
           </h1>
           <p className="font-normal mt-8 md:text-2xl text-xl">
-            Большой выбор различных игр, воспользуйтесь поиском для быстрого
-            доступа к разделу.
+            {selectedLanguage === 'ru'
+              ? 'Большой выбор различных игр, воспользуйтесь поиском для быстрогодоступа к разделу.'
+              : 'Large selection of games, use search for quick access to the section.'}
           </p>
         </div>
         <div className="text-white flex items-center gap-x-3 border-2 rounded-xl p-4 border-[#5DFFF5] bg-[#0B1F1D] w-full max-w-6xl mx-auto">
@@ -60,11 +73,25 @@ const KatalogGame = () => {
         </div>
 
         <div className="w-full border-2 flex-wrap bg-[#0E1A19] rounded-lg border-dashed border-[#55FFF5] px-20 py-14 text-ellipsis flex items-center justify-center gap-4 text-[#53FFF5]">
-          <p className="md:text-[32px] text-xl font-medium">РЕКЛАМА</p>
-          <p className="md:text-[32px] text-xl font-medium">РЕКЛАМА</p>
-          <p className="md:text-[32px] text-xl font-medium">РЕКЛАМА</p>
-          <p className="md:text-[32px] text-xl font-medium">РЕКЛАМА</p>
-          <p className="md:text-[32px] text-xl font-medium">РЕКЛАМА</p>
+          <p className="md:text-[26px] text-xl font-medium">
+            {selectedLanguage === 'ru' ? 'РЕКЛАМА' : 'ADVERTISING'}
+          </p>
+          <p className="md:text-[26px] text-xl font-medium">
+            {' '}
+            {selectedLanguage === 'ru' ? 'РЕКЛАМА' : 'ADVERTISING'}
+          </p>
+          <p className="md:text-[26px] text-xl font-medium">
+            {' '}
+            {selectedLanguage === 'ru' ? 'РЕКЛАМА' : 'ADVERTISING'}
+          </p>
+          <p className="md:text-[26px] text-xl font-medium">
+            {' '}
+            {selectedLanguage === 'ru' ? 'РЕКЛАМА' : 'ADVERTISING'}
+          </p>
+          <p className="md:text-[26px] text-xl font-medium">
+            {' '}
+            {selectedLanguage === 'ru' ? 'РЕКЛАМА' : 'ADVERTISING'}
+          </p>
         </div>
 
         <div className="pt-10 grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5">

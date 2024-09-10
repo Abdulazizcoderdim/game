@@ -1,5 +1,7 @@
 import { Search } from 'lucide-react';
 import React, { useState } from 'react';
+import { useRecoilState } from 'recoil';
+import languageState from '../atom/languageAtom';
 import GameCard from '../components/GameCard';
 import GameCard2 from '../components/GameCard2';
 import GameCard3 from '../components/GameCard3';
@@ -8,6 +10,8 @@ import MaxWidth from '../components/MaxWidth';
 const data = ['POPULAR', 'TOP', 'NEW', 'RATE', 'LATER'];
 
 const PrivateChat = () => {
+  const [selectedLanguage] = useRecoilState(languageState);
+
   const [active, setActive] = useState(0);
   return (
     <div>
@@ -19,8 +23,17 @@ const PrivateChat = () => {
             alt=""
           />
           <p className="md:text-[70px] text-2xl  leading-snug font-black">
-            ПРИВАТНЫЕ ЧИТЫ <br /> ОТ TRY
-            <span className="text-[#5EFFF5]">2</span>WIN
+            {selectedLanguage === 'ru' ? (
+              <>
+                ПРИВАТНЫЕ ЧИТЫ <br /> ОТ TRY
+                <span className="text-[#5EFFF5]">2</span>WIN
+              </>
+            ) : (
+              <>
+                PRIVATE CHATS <br /> FROM TRY
+                <span className="text-[#5EFFF5]">2</span>WIN
+              </>
+            )}
           </p>
         </div>
 
@@ -29,7 +42,7 @@ const PrivateChat = () => {
           <input
             className="font-normal border-none outline-none bg-transparent w-full text-2xl placeholder:font-normal placeholder:text-white placeholder:text-2xl"
             type="text"
-            placeholder="Battlefield"
+            placeholder={selectedLanguage === 'ru' ? 'Battlefield' : 'Поле боя'}
           />
         </div>
 
@@ -63,7 +76,7 @@ const PrivateChat = () => {
               <div className="py-6 space-y-5 px-5 text-white border-[#5DFEF4] border-dashed border-2 w-full h-full border-b-0 rounded-2xl rounded-b-none">
                 <div className="flex justify-between items-center">
                   <h1 className="md:text-[26px] text-2xl text-sh font-extrabold text-[#5EFFF5]">
-                    КТО МЫ?
+                    {selectedLanguage === 'ru' ? 'КТО МЫ?' : 'WHO ARE WE ?'}
                   </h1>
                   <div className="py-2 px-4 rounded-md box-sh bg-[#1F6864] text-[#5EFFF5s]">
                     <p className="font-extrabold text-[20px]">1</p>
@@ -73,15 +86,33 @@ const PrivateChat = () => {
                 <div className="bgr w-full h-1 rounded-full"></div>
 
                 <p className="font-semibold text-[13px]">
-                  Принимая во внимание показатели успешности, <br /> ебаа того
-                  рот ебал <br />
-                  повышение уровня гражданского сознания играет <br /> вот и все
-                  всем пизда <br /> определяющее значение для вывода текущих
+                  {selectedLanguage === 'ru' ? (
+                    <>
+                      {' '}
+                      Принимая во внимание показатели успешности, <br /> ебаа
+                      того рот ебал <br />
+                      повышение уровня гражданского сознания играет <br /> вот и
+                      все всем пизда <br /> определяющее значение для вывода
+                      текущих
+                    </>
+                  ) : (
+                    <>
+                      {' '}
+                      Accepting into consideration the success of the indicator,{' '}
+                      <br /> and that the level of the civilians's awareness
+                      increases and plays out the same
+                      <br /> value for output of current
+                      <br />
+                      indicators
+                    </>
+                  )}
                 </p>
                 {/* 2 */}
                 <div className="flex justify-between items-center">
                   <h1 className="md:text-[26px] text-2xl text-sh font-extrabold text-[#5EFFF5]">
-                    БОЛЕЕ 500 DLC
+                    {selectedLanguage === 'ru'
+                      ? 'БОЛЕЕ 500 DLC'
+                      : 'MORE 500 DLC'}
                   </h1>
                   <div className="py-2 px-4 rounded-md box-sh bg-[#1F6864] text-[#5EFFF5s]">
                     <p className="font-extrabold text-[20px]">1</p>
@@ -91,15 +122,31 @@ const PrivateChat = () => {
                 <div className="bgr w-full h-1 rounded-full"></div>
 
                 <p className="font-semibold text-[13px]">
-                  Принимая во внимание показатели успешности, ебаа того рот ебал{' '}
-                  <br />
-                  повышение уровня гражданского сознания играет вот и все всем{' '}
-                  <br />
-                  пизда. еба того рот ефиопыч <br />
-                  Всем привет и с вами <br />
-                  опять эфиоп который будет глотать яйца всего мира Добро <br />
-                  пожаловать в мир пиздеца а в добавок знайте что такое смерть.{' '}
-                  <br />
+                  {selectedLanguage === 'ru' ? (
+                    <>
+                      Принимая во внимание показатели успешности, ебаа того рот
+                      ебал <br />
+                      повышение уровня гражданского сознания играет вот и все
+                      всем <br />
+                      пизда. еба того рот ефиопыч <br />
+                      Всем привет и с вами <br />
+                      опять эфиоп который будет глотать яйца всего мира Добро{' '}
+                      <br />
+                      пожаловать в мир пиздеца а в добавок знайте что такое
+                      смерть. <br />
+                    </>
+                  ) : (
+                    <>
+                      Accepting into consideration the success of the indicator,
+                      <br />
+                      and that the level of the civilians's awareness increases
+                      and plays out the same
+                      <br />
+                      value for output of current
+                      <br />
+                      indicators.
+                    </>
+                  )}
                 </p>
 
                 <div className="w-full max-h-[167px] h-full rounded-lg border-2 border-[#5EFFF5]">
@@ -123,7 +170,9 @@ const PrivateChat = () => {
                 <div className="py-6 space-y-5 px-5 text-white border-[#5DFEF4] border-dashed border-2 w-full h-full border-b-0 rounded-2xl rounded-b-none">
                   <div className="flex justify-between items-center">
                     <h1 className="md:text-[26px] text-2xl text-sh font-extrabold text-[#5EFFF5]">
-                      НАДЕЖНО И БЕЗОПАСНО
+                      {selectedLanguage === 'ru'
+                        ? 'НАДЕЖНО И БЕЗОПАСНО'
+                        : 'SAFE AND SECURE'}
                     </h1>
                     <div className="py-2 px-4 rounded-md box-sh bg-[#1F6864] text-[#5EFFF5s]">
                       <p className="font-extrabold text-[20px]">2</p>
@@ -134,13 +183,29 @@ const PrivateChat = () => {
 
                   <div className="w-full max-md:flex-col max-md:space-y-4 flex justify-between items-center">
                     <p className="font-semibold text-[13px]">
-                      Принимая во внимание показатели успешности, <br /> ебаа
-                      того рот ебал повышение уровня гражданского сознания
-                      играет вот и <br />
-                      все всем пизда определяющее значение для <br /> вывода
-                      текущих активов. что ты там сказал? Прежде всего,
-                      сложившаяся <br />
-                      структура.
+                      {selectedLanguage === 'ru' ? (
+                        <>
+                          Принимая во внимание показатели успешности, <br />{' '}
+                          ебаа того рот ебал повышение уровня гражданского
+                          сознания играет вот и <br />
+                          все всем пизда определяющее значение для <br /> вывода
+                          текущих активов. что ты там сказал? Прежде всего,
+                          сложившаяся <br />
+                          структура.
+                        </>
+                      ) : (
+                        <>
+                          Accepting into consideration the success of the
+                          indicator,
+                          <br />
+                          and that the level of the civilians's awareness
+                          increases and plays out the same
+                          <br />
+                          value for output of current
+                          <br />
+                          indicators.
+                        </>
+                      )}
                     </p>
 
                     <img
@@ -162,7 +227,9 @@ const PrivateChat = () => {
                 <div className="py-6 space-y-5 px-5 text-white border-[#5DFEF4] border-dashed border-2 w-full h-full border-b-0 rounded-2xl rounded-b-none">
                   <div className="flex justify-between items-center">
                     <h1 className="md:text-[26px] text-2xl text-sh font-extrabold text-[#5EFFF5]">
-                      ЛУЧШИЕ НА РЫНКЕ
+                      {selectedLanguage === 'ru'
+                        ? 'ЛУЧШИЕ НА РЫНКЕ'
+                        : 'BEST IN THE MARKET'}
                     </h1>
                     <div className="py-2 px-4 rounded-md box-sh bg-[#1F6864] text-[#5EFFF5s]">
                       <p className="font-extrabold text-[20px]">2</p>
@@ -173,11 +240,28 @@ const PrivateChat = () => {
 
                   <div className="w-full max-md:flex-col flex justify-between max-md:space-y-4 items-center">
                     <p className="font-semibold text-[13px]">
-                      Принимая во внимание показатели успешности, <br /> ебаа
-                      того рот ебал повышение уровня гражданского сознания{' '}
-                      <br /> играет вот и все всем пизда определяющее значение
-                      для вывода <br /> текущих активов. что ты там сказал?
-                      Прежде всего, <br /> сложившаяся структура.
+                      {selectedLanguage === 'ru' ? (
+                        <>
+                          Принимая во внимание показатели успешности, <br />{' '}
+                          ебаа того рот ебал повышение уровня гражданского
+                          сознания <br /> играет вот и все всем пизда
+                          определяющее значение для вывода <br /> текущих
+                          активов. что ты там сказал? Прежде всего, <br />{' '}
+                          сложившаяся структура.
+                        </>
+                      ) : (
+                        <>
+                          Accepting into consideration the success of the
+                          indicator,
+                          <br />
+                          and that the level of the civilians's awareness
+                          increases and plays out the same
+                          <br />
+                          value for output of current
+                          <br />
+                          indicators.
+                        </>
+                      )}
                     </p>
 
                     <img
@@ -193,7 +277,16 @@ const PrivateChat = () => {
         </div>
 
         <h1 className="font-extrabold md:text-[40px] text-3xl text-[#5EFFF5]">
-          ДОБРО ПОЖАЛОВАТЬ НА <span className="text-white">SAFE</span> CHEATS
+          {selectedLanguage === 'ru' ? (
+            <>
+              ДОБРО ПОЖАЛОВАТЬ НА <span className="text-white">SAFE</span>{' '}
+              CHEATS
+            </>
+          ) : (
+            <>
+              WELCOME TO <span className="text-white">SAFE</span> CHEATS
+            </>
+          )}
         </h1>
 
         <div className="w-full box-sh h-[528px] border-2 border-[#5EFFF5] rounded-lg">
@@ -206,12 +299,30 @@ const PrivateChat = () => {
 
         <div className="w-full text-center space-y-3">
           <h1 className="text-center font-extrabold md:text-[43px] text-3xl">
-            <span className="text-[#5DFFF5]">ПОПУЛЯРНЫЕ</span> ИГРЫ
+            {selectedLanguage === 'ru' ? (
+              <>
+                <span className="text-[#5DFFF5]">ПОПУЛЯРНЫЕ</span> ИГРЫ
+              </>
+            ) : (
+              <>
+                <span className="text-[#5DFFF5]">POPULAR</span> GAMES
+              </>
+            )}
           </h1>
           <p className="text-[23px] font-normal text-center">
-            Более 500 читов на различные игры и мы подобрали для вас самые{' '}
-            <br />
-            популярные игры
+            {selectedLanguage === 'ru' ? (
+              <>
+                Более 500 читов на различные игры и мы подобрали для вас самые{' '}
+                <br />
+                популярные игры
+              </>
+            ) : (
+              <>
+                More than 500 cheats on different games and we have selected
+                <br />
+                for you the most popular games
+              </>
+            )}
           </p>
         </div>
         <div className="sm:pt-10  grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5">
@@ -223,12 +334,31 @@ const PrivateChat = () => {
         {/* 2 */}
         <div className="w-full text-center space-y-3">
           <h1 className="text-center font-extrabold md:text-[43px] text-3xl">
-            <span className="text-[#5DFFF5]">ПОПУЛЯРНЫЕ</span> DLC
+            {selectedLanguage === 'ru' ? (
+              <>
+                <span className="text-[#5DFFF5]">ПОПУЛЯРНЫЕ</span> DLC
+              </>
+            ) : (
+              <>
+                <span className="text-[#5DFFF5]">POPULAR</span> DLC
+              </>
+            )}
           </h1>
           <p className="text-[23px] font-normal text-center">
-            Более 500 читов на различные игры и мы подобрали для вас самые{' '}
-            <br />
-            популярные игры
+            {selectedLanguage === 'ru' ? (
+              <>
+                {' '}
+                Более 500 читов на различные игры и мы подобрали для вас самые{' '}
+                <br />
+                популярные игры
+              </>
+            ) : (
+              <>
+                More than 500 cheats on different games and we have selected
+                <br />
+                for you the most popular games
+              </>
+            )}
           </p>
         </div>
         <div className="sm:pt-10  grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5">
