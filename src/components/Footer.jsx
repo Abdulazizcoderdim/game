@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
+import languageState from '../atom/languageAtom';
 import MaxWidth from './MaxWidth';
 
 const Footer = () => {
+  const [selectedLanguage] = useRecoilState(languageState);
+
   return (
     <div className="border-t-2 border-[#438D7E] bg-[#12211E]">
       <MaxWidth className="py-10 ">
@@ -16,23 +20,37 @@ const Footer = () => {
           </Link>
           <ul className="grid lg:grid-cols-5 grid-cols-2 max-lg:gap-y-5 lg:gap-x-3">
             <li className="xl:text-lg text-base font-normal">
-              <Link to={'/private'}>Договор оферты</Link>
+              <Link to={'/private'}>
+                {selectedLanguage === 'ru'
+                  ? 'Договор оферты'
+                  : 'Terms of service'}
+              </Link>
             </li>
             <li className="xl:text-lg text-base font-normal">
-              <Link to={'/support'}>Поддержка</Link>
+              <Link to={'/support'}>
+                {selectedLanguage === 'ru' ? 'Поддержка' : 'Support'}
+              </Link>
             </li>
             <li className="xl:text-lg text-base font-normal">
-              <Link to={'/news'}>Новости</Link>
+              <Link to={'/news'}>
+                {selectedLanguage === 'ru' ? 'Новости' : 'News'}
+              </Link>
             </li>
             <li className="xl:text-lg text-base font-normal">
-              <Link to={'/'}>Главная</Link>
+              <Link to={'/'}>
+                {selectedLanguage === 'ru' ? 'Главная' : 'Home'}
+              </Link>
             </li>
             <li className="xl:text-lg text-base font-normal">
-              <Link to={'/catalog'}>Каталог игр</Link>
+              <Link to={'/catalog'}>
+                {selectedLanguage === 'ru' ? 'Каталог игр' : 'Games catalog'}
+              </Link>
             </li>
           </ul>
           <div>
-            <p className="text-xl">Мы принимаем</p>
+            <p className="text-xl">
+              {selectedLanguage === 'ru' ? 'Мы принимаем' : 'We accept'}
+            </p>
             <div className="flex  items-center gap-x-2">
               <img src="M.png" alt="" />
               <img src="V.png" alt="" />
