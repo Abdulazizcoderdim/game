@@ -9,6 +9,7 @@ const data = ['POPULAR', 'TOP', 'NEW', 'RATE', 'LATER'];
 
 const News = () => {
   const [active, setActive] = useState(0);
+  const [nameLevel, setNameLevel] = useState('POPULAR');
   return (
     <div>
       <MaxWidth className="pt-20 text-center text-white space-y-5">
@@ -35,7 +36,9 @@ const News = () => {
             const isActive = i === active;
             return (
               <button
-                onClick={() => setActive(i)}
+                key={i}
+                set
+                onClick={() => (setActive(i), setNameLevel(item))}
                 className={`px-7 ${
                   isActive
                     ? 'border-[#17F1FF] border-2 text-[#17F1FF] bg-[#043633]'
@@ -49,14 +52,42 @@ const News = () => {
         </div>
 
         <div className="sm:pt-10 pb-10 grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5">
-          <GameCard isNew={true} top={true} hot={true} rate={false} />
-          <GameCard2 hot={true} />
-          <GameCard3 rate={true} top={true} />
-          <GameCard3 rate={true} top={true} />
-          <GameCard isNew={true} top={true} hot={true} rate={false} />
-          <GameCard2 hot={true} />
-          <GameCard3 rate={true} top={true} />
-          <GameCard3 rate={true} top={true} />
+          {(nameLevel === 'TOP' ||
+            nameLevel === 'LATER' ||
+            nameLevel === 'POPULAR' ||
+            nameLevel === 'HOT' ||
+            nameLevel === 'NEW') && (
+            <GameCard isNew={true} top={true} hot={true} rate={false} />
+          )}
+          {(nameLevel === 'HOT' ||
+            nameLevel === 'LATER' ||
+            nameLevel === 'POPULAR') && <GameCard2 hot={true} />}
+          {(nameLevel === 'RATE' ||
+            nameLevel === 'LATER' ||
+            nameLevel === 'POPULAR' ||
+            nameLevel === 'TOP') && <GameCard3 rate={true} top={true} />}
+          {(nameLevel === 'RATE' ||
+            nameLevel === 'LATER' ||
+            nameLevel === 'POPULAR' ||
+            nameLevel === 'TOP') && <GameCard3 rate={true} top={true} />}
+          {(nameLevel === 'TOP' ||
+            nameLevel === 'LATER' ||
+            nameLevel === 'POPULAR' ||
+            nameLevel === 'HOT' ||
+            nameLevel === 'NEW') && (
+            <GameCard isNew={true} top={true} hot={true} rate={false} />
+          )}
+          {(nameLevel === 'HOT' ||
+            nameLevel === 'LATER' ||
+            nameLevel === 'POPULAR') && <GameCard2 hot={true} />}
+          {(nameLevel === 'RATE' ||
+            nameLevel === 'LATER' ||
+            nameLevel === 'POPULAR' ||
+            nameLevel === 'TOP') && <GameCard3 rate={true} top={true} />}
+          {(nameLevel === 'RATE' ||
+            nameLevel === 'LATER' ||
+            nameLevel === 'POPULAR' ||
+            nameLevel === 'TOP') && <GameCard3 rate={true} top={true} />}
         </div>
 
         <div className="w-full border-2 flex-wrap bg-[#0E1A19] rounded-lg border-dashed border-[#55FFF5] px-20 py-14 text-ellipsis flex items-center justify-center gap-4 text-[#53FFF5]">
