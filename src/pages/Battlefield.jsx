@@ -177,7 +177,7 @@ const Battlefield = () => {
     <div className="pb-20">
       <MaxWidth>
         {/* 1 chisi */}
-        <div className="w-full text-white space-y-3 pt-24">
+        <div className="w-full text-center text-white space-y-3 pt-24">
           <p className="font-extrabold md:text-[63px] sm:text-5xl text-xl">
             {selectedLanguage === 'ru' ? (
               <>
@@ -205,7 +205,7 @@ const Battlefield = () => {
           </p>
         </div>
         {/* 2 chisi */}
-        <div className="flex max-lg:flex-col gap-10 mt-7">
+        <div className="flex max-lg:flex-col justify-center gap-10 mt-7">
           <div
             style={{
               background:
