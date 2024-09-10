@@ -177,7 +177,7 @@ const Battlefield = () => {
     <div className="pb-20">
       <MaxWidth>
         {/* 1 chisi */}
-        <div className="w-full text-center text-white space-y-3 pt-24">
+        <div className="w-full text-start text-white space-y-3 pt-24">
           <p className="font-extrabold md:text-[63px] sm:text-5xl text-xl">
             {selectedLanguage === 'ru' ? (
               <>
