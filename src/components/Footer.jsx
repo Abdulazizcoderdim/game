@@ -18,7 +18,7 @@ const Footer = () => {
             <img width={57} height={51} src="Vector.png" alt="" />
             <img width={116} height={28} src="TRY2WIN.png" alt="" />
           </Link>
-          <ul className="grid lg:grid-cols-5 grid-cols-2 max-lg:gap-y-5 lg:gap-x-3">
+          <ul className="grid lg:grid-cols-5 grid-cols-2 text-center max-lg:gap-y-5 lg:gap-x-3">
             <li className="xl:text-lg text-base font-normal">
               <Link to={'/private'}>
                 {selectedLanguage === 'ru'
