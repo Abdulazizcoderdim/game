@@ -16,7 +16,7 @@ const Footer = () => {
           </Link>
           <ul className="grid lg:grid-cols-5 grid-cols-2 max-lg:gap-y-5 lg:gap-x-3">
             <li className="xl:text-lg text-base font-normal">
-              <Link to={'#'}>Договор оферты</Link>
+              <Link to={'/private'}>Договор оферты</Link>
             </li>
             <li className="xl:text-lg text-base font-normal">
               <Link to={'/support'}>Поддержка</Link>

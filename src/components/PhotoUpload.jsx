@@ -1,7 +1,11 @@
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useState } from 'react';
+import { useRecoilState } from 'recoil';
+import languageState from '../atom/languageAtom';
 
 export default function PhotoUpload() {
+  const [selectedLanguage] = useRecoilState(languageState);
+
   const [currentPhoto, setCurrentPhoto] = useState(0);
   const totalPhotos = 4;
 
@@ -50,7 +54,9 @@ export default function PhotoUpload() {
         ))}
       </div>
       <p className="text-[#75FFF6] text-center mt-2 text-[12px] font-medium">
-        минимум {totalPhotos} фото
+        {selectedLanguage === 'ru'
+          ? 'минимум {totalPhotos} фото'
+          : 'minimum {totalPhotos} photos'}
       </p>
     </div>
   );

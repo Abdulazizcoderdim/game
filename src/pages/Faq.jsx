@@ -1,16 +1,30 @@
 import React from 'react';
+import { useRecoilState } from 'recoil';
+import languageState from '../atom/languageAtom';
 import Compo from '../components/Compo';
 import MaxWidth from '../components/MaxWidth';
 
 const Faq = () => {
+  const [selectedLanguage] = useRecoilState(languageState);
+
   return (
     <div className="pb-20">
       <div className="w-full text-center text-white space-y-3 pt-24">
         <p className="font-extrabold md:text-[63px] sm:text-5xl text-3xl">
-          FAQ <span className="text-[#61FFF5]">&</span> ПОДДЕРЖКА
+          {selectedLanguage === 'ru' ? (
+            <>
+              FAQ <span className="text-[#61FFF5]">&</span> ПОДДЕРЖКА
+            </>
+          ) : (
+            <>
+              FAQ <span className="text-[#61FFF5]">&</span> SUPPORT
+            </>
+          )}
         </p>
         <p className="text-[19px] font-semibold">
-          Обязательно обновите и скачайте все драйвера и необходимые программы
+          {selectedLanguage === 'ru'
+            ? 'Обязательно обновите и скачайте все драйвера и необходимые программы'
+            : 'Update and download all driver and necessary programs'}
         </p>
       </div>
       <MaxWidth className="space-y-10">
@@ -24,33 +38,56 @@ const Faq = () => {
                 src="nast.png"
                 alt=""
               />
-              Необходимые
-              <span className="text-[#61FFF5]"> компоненты</span>
+              {selectedLanguage === 'ru' ? 'Необходимые' : 'Required'}
+              <span className="text-[#61FFF5]">
+                {' '}
+                {selectedLanguage === 'ru' ? 'компоненты' : 'components'}
+              </span>
             </p>
           </div>
           <div className="flex flex-wrap gap-x-10 gap-y-14 mt-10">
             <Compo
-              title={'ПАКЕТ С КОМПОНЕНТАМИ:'}
+              title={
+                selectedLanguage === 'ru'
+                  ? 'ПАКЕТ С КОМПОНЕНТАМИ:'
+                  : 'PACKAGE WITH COMPONENTS:'
+              }
               icon={'AMD.png'}
               brend={'AMD'}
             />
             <Compo
-              title={'ПАКЕТ С КОМПОНЕНТАМИ:'}
+              title={
+                selectedLanguage === 'ru'
+                  ? 'ПАКЕТ С КОМПОНЕНТАМИ:'
+                  : 'PACKAGE WITH COMPONENTS:'
+              }
               icon={'NVIDIA.png'}
               brend={'NVIDIA'}
             />
             <Compo
-              title={'ПАКЕТ С КОМПОНЕНТАМИ:'}
+              title={
+                selectedLanguage === 'ru'
+                  ? 'ПАКЕТ С КОМПОНЕНТАМИ:'
+                  : 'PACKAGE WITH COMPONENTS:'
+              }
               icon={'vs.png'}
               brend={'Microsoft Visual C++ 2005-2019'}
             />
             <Compo
-              title={'ПАКЕТ С КОМПОНЕНТАМИ:'}
+              title={
+                selectedLanguage === 'ru'
+                  ? 'ПАКЕТ С КОМПОНЕНТАМИ:'
+                  : 'PACKAGE WITH COMPONENTS:'
+              }
               icon={'X.png'}
               brend={'Directx 12'}
             />
             <Compo
-              title={'ПАКЕТ С КОМПОНЕНТАМИ:'}
+              title={
+                selectedLanguage === 'ru'
+                  ? 'ПАКЕТ С КОМПОНЕНТАМИ:'
+                  : 'PACKAGE WITH COMPONENTS:'
+              }
               icon={'net.png'}
               brend={'Microsoft Net Framework 4.7.1'}
             />
@@ -66,22 +103,31 @@ const Faq = () => {
                 src="mac.png"
                 alt=""
               />
-              Дополнительные <span className="text-[#61FFF5]">параметры</span>
+              {selectedLanguage === 'ru' ? (
+                <>
+                  Дополнительные{' '}
+                  <span className="text-[#61FFF5]">параметры</span>
+                </>
+              ) : (
+                <>
+                  Additional <span className="text-[#61FFF5]">options</span>{' '}
+                </>
+              )}
             </p>
           </div>
           <div className="flex flex-wrap gap-x-10 gap-y-14 mt-10">
             <Compo
-              title={'Авто выключение'}
+              title={selectedLanguage === 'ru' ? 'Авто выключение' : 'Auto off'}
               icon={'s.png'}
               brend={'Windows Smart Screen'}
             />
             <Compo
-              title={'Авто выключение'}
+              title={selectedLanguage === 'ru' ? 'Авто выключение' : 'Auto off'}
               icon={'NVIDIA.png'}
               brend={'Windows Defender'}
             />
             <Compo
-              title={'Авто выключение'}
+              title={selectedLanguage === 'ru' ? 'Авто выключение' : 'Auto off'}
               icon={'sh.png'}
               brend={'UAC (Контроль учетных записей)'}
             />
@@ -97,16 +143,36 @@ const Faq = () => {
                 src="c.png"
                 alt=""
               />
-              Вспомогательные <span className="text-[#61FFF5]">программы</span>
+              {selectedLanguage === 'ru' ? (
+                <>
+                  Вспомогательные{' '}
+                  <span className="text-[#61FFF5]">программы</span>
+                </>
+              ) : (
+                <>
+                  Additional <span className="text-[#61FFF5]">options</span>{' '}
+                </>
+              )}
             </p>
           </div>
           <div className="flex flex-wrap gap-x-10 gap-y-14 mt-10">
             <Compo
-              title={'Программа удаленного доступа'}
+              title={
+                selectedLanguage === 'ru'
+                  ? 'Программа удаленного доступа'
+                  : 'Remote Desktop program'
+              }
               icon={'c1.png'}
               brend={'AnyDesk '}
             />
-            <Compo title={'Арихиватор WinRAR'} icon={'c2.png'} />
+            <Compo
+              title={
+                selectedLanguage === 'ru'
+                  ? 'Арихиватор WinRAR'
+                  : 'Archiver WinRAR'
+              }
+              icon={'c2.png'}
+            />
           </div>
         </div>
         <div>
@@ -119,7 +185,15 @@ const Faq = () => {
                 src="sup.png"
                 alt=""
               />
-              Техническая <span className="text-[#61FFF5]">поддержка</span>
+              {selectedLanguage === 'ru' ? (
+                <>
+                  Техническая <span className="text-[#61FFF5]">поддержка</span>
+                </>
+              ) : (
+                <>
+                  Technical <span className="text-[#61FFF5]">support</span>
+                </>
+              )}
             </p>
           </div>
           <div className="flex flex-wrap gap-x-10 gap-y-14 mt-10">
@@ -133,12 +207,21 @@ const Faq = () => {
               <div className="py-6 px-5 space-y-7 text-white border-[#5DFEF4] border-dashed border-2 w-full h-full border-b-0 rounded-2xl rounded-b-none">
                 <div className="flex items-center gap-x-3">
                   <p className="text-[13px] text-center w-full font-semibold">
-                    Вы не нашли решение? <br />
-                    Обратитесь к службе поддержки
+                    {selectedLanguage === 'ru' ? (
+                      <>
+                        Вы не нашли решение? <br />
+                        Обратитесь к службе поддержки
+                      </>
+                    ) : (
+                      <>
+                        Are you looking for a solution? <br />
+                        Contact the support
+                      </>
+                    )}
                   </p>
                 </div>
                 <button className="bg-[#4CB4AD] font-semibold text-base w-full py-1 rounded-lg">
-                  Техподдержка
+                  {selectedLanguage === 'ru' ? 'Техподдержка' : 'Support'}
                 </button>
               </div>
             </div>

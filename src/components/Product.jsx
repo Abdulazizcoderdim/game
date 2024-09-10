@@ -1,14 +1,26 @@
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useState } from 'react';
-
-const products = [
-  { name: 'Товар 1', period: '1 день' },
-  { name: 'Товар 2', period: '1 неделя' },
-  { name: 'Товар 3', period: '1 месяц' },
-  { name: 'Товар 4', period: '1 год' },
-];
+import { useRecoilState } from 'recoil';
+import languageState from '../atom/languageAtom';
 
 export default function Product() {
+  const [selectedLanguage] = useRecoilState(languageState);
+
+  const products =
+    selectedLanguage === 'ru'
+      ? [
+          { name: 'Товар 1', period: '1 день' },
+          { name: 'Товар 2', period: '1 неделя' },
+          { name: 'Товар 3', period: '1 месяц' },
+          { name: 'Товар 4', period: '1 год' },
+        ]
+      : [
+          { name: 'Product 1', period: '1 day' },
+          { name: 'Product 2', period: '1 week' },
+          { name: 'Product 3', period: '1 month' },
+          { name: 'Product 4', period: '1 year' },
+        ];
+
   const [amounts, setAmounts] = useState(Array(products.length).fill(''));
 
   const handleAmountChange = (index, value) => {
@@ -34,13 +46,17 @@ export default function Product() {
           </div>
           <input
             type="text"
-            placeholder="Укажите сумму"
+            placeholder={
+              selectedLanguage === 'ru' ? 'Укажите сумму' : 'Enter amount'
+            }
             value={amounts[index]}
             onChange={e => handleAmountChange(index, e.target.value)}
             className="bg-[#17302E] border-2 border-[#3C7D77] box-sh text-white p-2 rounded text-base font-medium placeholder:text-white w-full"
           />
           <button className="bg-[#17302E] border-2 border-[#3C7D77] box-sh p-2 rounded text-base font-medium hover:bg-teal-800 transition-colors">
-            Ссылка на digiseller
+            {selectedLanguage === 'ru'
+              ? 'Ссылка на digiseller'
+              : 'Link to digiseller'}
           </button>
         </div>
       ))}

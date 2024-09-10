@@ -1,24 +1,41 @@
 import React, { useState } from 'react';
-import MaxWidth from '../components/MaxWidth';
+import { useRecoilState } from 'recoil';
+import languageState from '../atom/languageAtom';
 import AddChat from '../components/AddChat';
 import AddGame from '../components/AddGame';
 import EditGame from '../components/EditGame';
 import EditTags from '../components/EditTags';
+import MaxWidth from '../components/MaxWidth';
 
 const PanelAdminstrator = () => {
   const [active, setActive] = useState(1);
-  const catalogItems = [
-    'Добавить игру',
-    'Добавить чит',
-    'Редактировать',
-    'Редактировать теги',
-  ];
+  const [selectedLanguage] = useRecoilState(languageState);
+
+  // const catalogItems = [
+  //   'Добавить игру',
+  //   'Добавить чит',
+  //   'Редактировать',
+  //   'Редактировать теги',
+  // ];
+  const catalogItems =
+    selectedLanguage === 'ru'
+      ? ['Добавить игру', 'Добавить чит', 'Редактировать', 'Редактировать теги']
+      : ['Add game', 'Add chat', 'Edit', 'Edit tags'];
+
   const dropdownItems = [<AddGame />, <AddChat />, <EditGame />, <EditTags />];
   return (
     <div className="pt-20">
       <MaxWidth className="text-white">
         <h1 className="font-extrabold md:text-4xl text-xl">
-          ПАНЕЛЬ <span className="text-[#5CFFF5]">АДМИНИСТРАТОРА</span>
+          {selectedLanguage === 'ru' ? (
+            <>
+              ПАНЕЛЬ <span className="text-[#5CFFF5]">АДМИНИСТРАТОРА</span>
+            </>
+          ) : (
+            <>
+              ADMIN <span className="text-[#5CFFF5]">PANEL</span>
+            </>
+          )}
         </h1>
 
         <div className="mt-10 flex max-xl:flex-col max-xl:space-y-10 gap-x-5">
@@ -40,12 +57,13 @@ const PanelAdminstrator = () => {
               );
             })}
           </div>
-          <div className="max-w-[2578px] w-full">{dropdownItems[Number(active)]}</div>
+          <div className="max-w-[2578px] w-full">
+            {dropdownItems[Number(active)]}
+          </div>
         </div>
       </MaxWidth>
     </div>
   );
 };
-
 
 export default PanelAdminstrator;

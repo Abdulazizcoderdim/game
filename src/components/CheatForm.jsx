@@ -1,6 +1,10 @@
 import { useState } from 'react';
+import { useRecoilState } from 'recoil';
+import languageState from '../atom/languageAtom';
 
 export default function ChearForm() {
+  const [selectedLanguage] = useRecoilState(languageState);
+
   const [russianInput, setRussianInput] = useState('');
   const [englishInput, setEnglishInput] = useState('');
   const [isLoaded, setIsLoaded] = useState(false);
@@ -26,13 +30,21 @@ export default function ChearForm() {
       <div className="space-y-4">
         <div className="flex flex-col gap-3 md:min-w-[696px]">
           <input
-            placeholder="Укажите компоненты либо устройства"
+            placeholder={
+              selectedLanguage === 'ru'
+                ? 'Укажите компоненты либо устройства'
+                : 'Specify components or devices'
+            }
             value={russianInput}
             onChange={e => setRussianInput(e.target.value)}
             className="bg-[#17302E] outline-none placeholder:text-white border-2 p-2 max-w-[600px] rounded-lg font-medium sm:text-base text-sm border-[#3C7D77] box-sh"
           />
           <input
-            placeholder="Specify components or devices"
+            placeholder={
+              selectedLanguage === 'ru'
+                ? 'Укажите компоненты'
+                : 'Specify components or devices'
+            }
             value={englishInput}
             onChange={e => setEnglishInput(e.target.value)}
             className="bg-[#17302E] outline-none placeholder:text-white border-2 p-2 max-w-[600px] rounded-lg font-medium sm:text-base text-sm border-[#3C7D77] box-sh"
@@ -44,13 +56,13 @@ export default function ChearForm() {
               onClick={handleAddCheat}
               className="bg-[#4C8EB4] w-full px-4 py-2 rounded-lg hover:bg-blue-600 text-white flex-grow"
             >
-              Добавить чит
+              {selectedLanguage === 'ru' ? 'Добавить чит' : 'Add cheat'}
             </button>
             <button
               onClick={handleClearFields}
               className="bg-[#B4594C] w-full px-5 py-2 rounded-lg hover:bg-red-600 text-white flex-grow"
             >
-              Очистить все поле
+              {selectedLanguage === 'ru' ? 'Очистить все поле' : 'Clear all'}
             </button>
           </div>
           <button
@@ -58,13 +70,19 @@ export default function ChearForm() {
             className={`w-full rounded-lg font-medium py-2 text-base ${
               isLoaded
                 ? 'bg-[#18312F] text-[#71FF6F] hover:bg-gray-800'
-                : 'bg-[#18312F] '
+                : 'bg-[#18312F]'
             } text-white`}
           >
-            {isLoaded ? 'Успешно загруженно' : 'Загрузить'}
+            {isLoaded
+              ? `${
+                  selectedLanguage === 'ru'
+                    ? 'Успешно загруженно'
+                    : 'Successfully loaded'
+                }`
+              : `${selectedLanguage === 'ru' ? 'Загрузить' : 'Load'}`}
           </button>
         </div>
-      </div>
+      </div>{' '}
     </div>
   );
 }

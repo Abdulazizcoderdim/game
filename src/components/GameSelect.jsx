@@ -1,21 +1,25 @@
 import { useState } from 'react';
-
-const games = [
-  'Call of Duty: MW3',
-  'Battlefield 4',
-  'Battlefield 2042',
-  'Counter-Strike 2',
-  'Counter-Strike 1.6',
-  'Warface',
-  'Call of Duty: Warzone',
-  'Escape From Tarkov',
-  'Arena: BreakEBALA',
-  'Rogue: Company',
-  'Valorant',
-];
+import { useRecoilState } from 'recoil';
+import languageState from '../atom/languageAtom';
 
 export default function GameSelect() {
+  const [selectedLanguage] = useRecoilState(languageState);
+
   const [selectedGame, setSelectedGame] = useState(0);
+
+  const games = [
+    'Call of Duty: MW3',
+    'Battlefield 4',
+    'Battlefield 2042',
+    'Counter-Strike 2',
+    'Counter-Strike 1.6',
+    'Warface',
+    'Call of Duty: Warzone',
+    'Escape From Tarkov',
+    'Arena: BreakEBALA',
+    'Rogue: Company',
+    'Valorant',
+  ];
 
   return (
     <div className="border-2 box-sh border-[#3C7D77] rounded-lg bg-[#17302E] p-3">

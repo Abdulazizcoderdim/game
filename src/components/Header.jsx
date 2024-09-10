@@ -1,14 +1,25 @@
 import { Menu, X } from 'lucide-react';
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { navItems } from '../constants';
+import { useRecoilState } from 'recoil';
+import languageState from '../atom/languageAtom';
+import { navItemsEn, navItemsRu } from '../constants';
 import MaxWidth from './MaxWidth';
 import MobilNav from './MobilNav';
 
 const Header = () => {
+  const [selectedLanguage, setSelectedLanguage] = useRecoilState(languageState);
+
   const { pathname } = useLocation();
   const [close, setClose] = useState(true);
   const [modalTg, setModalTg] = useState(false);
+
+  const handleLanguageChange = e => {
+    setSelectedLanguage(e.target.value);
+  };
+
+  const navItems = selectedLanguage === 'ru' ? navItemsRu : navItemsEn;
+
   return (
     <div>
       <MaxWidth className="py-4 bg-[#041F1D] text-white">
@@ -19,7 +30,7 @@ const Header = () => {
           </Link>
 
           <ul className="lg:flex hidden items-center gap-x-10">
-            {navItems.map(item => {
+            {navItems.map((item, i) => {
               const isActive = pathname === item.path;
               return (
                 <li
@@ -28,7 +39,7 @@ const Header = () => {
                       ? 'border-2 border-[#36FFF3] rounded-lg bg-[#05413D] py-1 px-4 shadow-[0_0_4px_1px_rgba(0,255,255,0.6)]'
                       : 'font-normal text-base'
                   }`}
-                  key={item.name}
+                  key={i}
                 >
                   <Link to={item.path}>{item.name}</Link>
                 </li>
@@ -40,9 +51,9 @@ const Header = () => {
             <img width={20} height={20} src="Telegram.png" alt="" />
             <img width={20} height={20} src="Discord.png" alt="" />
             <select
-              defaultValue={'ru'}
+              onChange={handleLanguageChange}
+              value={selectedLanguage}
               className="border-none bg-transparent outline-none"
-              id="lang"
             >
               <option className="bg-[#041F1D]" value="ru">
                 RU
@@ -67,7 +78,16 @@ const Header = () => {
       {close && (
         <div className="flex bg-[#27A79F] items-center py-2 text-white relative">
           <p className="font-medium sm:text-base text-xs w-full text-center">
-            Присоединяйтесь к нашему <br className='sm:hidden' /> сообществу в Telegram
+            {selectedLanguage === 'ru' ? (
+              <>
+                Присоединяйтесь к нашему <br className="sm:hidden" /> сообществу
+                в Telegram.
+              </>
+            ) : (
+              <>
+                Join our community <br className="sm:hidden" /> in Telegram.
+              </>
+            )}
           </p>
           <button onClick={() => setClose(false)} className="absolute right-2">
             <X />
