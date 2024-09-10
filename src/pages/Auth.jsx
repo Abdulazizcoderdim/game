@@ -5,19 +5,19 @@ import MaxWidth from '../components/MaxWidth';
 const Auth = () => {
   return (
     <div className="pt-20 text-white flex justify-center items-center">
-      <MaxWidth>
-        <div className="text-center md:max-w-xl max-w-lg ">
+      <MaxWidth className="text-center flex flex-col justify-center mx-auto">
+        <div className="text-center flex flex-col space-y-10 justify-center items-center w-full">
           <div className="space-y-3">
             <h1 className="md:text-[63px] text-4xl font-extrabold text-[#5CFFF5]">
               РЕГИСТРАЦИЯ
             </h1>
-            <p className="md:text-2xl text-xl font-normal">
-              Большой выбор различных игр, воспользуйтесь поиском для быстрого
+            <p className="md:text-2xl sm:text-xl pt-3 text-base font-normal">
+              Большой выбор различных игр, воспользуйтесь <br /> поиском для быстрого
               доступа к разделу.
             </p>
           </div>
 
-          <div className="border-2 mt-10 backround-color border-[#5DFFF5] rounded-3xl p-5 text-center">
+          <div className="border-2 max-w-[512px] w-full box-sh mt-10 backround-color border-[#5DFFF5] rounded-3xl p-5 text-center">
             <div className="space-y-5 md:p-5 p-2">
               <Link
                 to="#"
@@ -59,6 +59,18 @@ const Auth = () => {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="text-center mt-10 leading-tight space-y-10 text-white">
+          <div className="space-y-3 ">
+            <p className="md:text-[63px] leading-10 sm:text-4xl text-xl font-extrabold ">
+              ВЫ УСПЕШНО{' '} <br /> <br className='sm:flex hidden' />
+              <span className="text-[#5CFFF5]">ЗАРЕГИСТРИРОВАЛИСЬ</span>
+            </p>
+
+            <p className="sm:text-[24px] pt-4 text-xl font-normal">
+              Ожидайте потверждение вашей регистрации
+            </p>
           </div>
         </div>
       </MaxWidth>
