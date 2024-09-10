@@ -36,7 +36,7 @@ export default function GameCard2({ isNew, top, hot, rate }) {
     <div
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      className="max-w-[310px] w-full max-h-[370px] h-full bg-gray-900 rounded-2xl overflow-hidden relative"
+      className="max-w-[310px] box-sh w-full max-h-[370px] h-full bg-gray-900 rounded-2xl overflow-hidden relative"
     >
       <div className="absolute top-0 left-0 right-0 p-5 z-10">
         <div className="rounded-full p-1">

@@ -38,7 +38,7 @@ export default function GameCard3({ isNew, top, hot, rate }) {
       onMouseLeave={() => setHover(false)}
       className="max-w-[310px] w-full max-h-[370px] h-full bg-gray-900 rounded-2xl overflow-hidden relative"
     >
-      <div className="absolute top-0 left-0 right-0 p-5 z-10">
+      <div className="absolute box-sh top-0 left-0 right-0 p-5 z-10">
         <div className="rounded-full p-1">
           <div className="flex space-x-1">
             {progress.map((prog, index) => (
